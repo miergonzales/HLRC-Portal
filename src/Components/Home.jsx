@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Leftside from "./Leftside";
 import Main from "./Main";
-import Rightside from "./Rightside";
 
 /*________________________________________________________________________________*/
 

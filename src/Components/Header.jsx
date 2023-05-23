@@ -239,14 +239,5 @@ const User = styled(NavList)`
   }
 `;
 
-const Work = styled(User)`
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-  img:last-child {
-    width: fit-content;
-    height: fit-content;
-  }
-  @media (max-width: 767px) {
-    display: none;
-  }
-`;
+
 /*________________________________________________________________________________*/
