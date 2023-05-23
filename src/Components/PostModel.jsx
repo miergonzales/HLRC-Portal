@@ -12,8 +12,8 @@ const PostModel = (props) => {
   const [text, setText] = useState("");
   const sharedImage = useRef();
   const [image, setImage] = useState();
-  const sharedVedio = useRef();
-  const [vedio, setVedio] = useState();
+  const sharedVideo = useRef();
+  const [video, setVideo] = useState();
 
   let textURL = text.match(
     new RegExp(
@@ -24,13 +24,13 @@ const PostModel = (props) => {
   const reset = () => {
     setText("");
     setImage();
-    setVedio();
+    setVideo();
   };
 
   const postArticleHandler = (e) => {
     if (e.target === e.currentTarget) {
-      if (image || vedio) {
-        props.uploadPost({ image, vedio, text });
+      if (image || video) {
+        props.uploadPost({ image, vedio: video, text });
       } else {
         addDoc(collection(db, "Articles"), {
           user: {
@@ -85,25 +85,25 @@ const PostModel = (props) => {
           </Description>
 
           <Uploads>
-            {(image || vedio) && (
+            {(image || video) && (
               <img
                 onClick={() => {
                   setImage(null);
-                  setVedio(null);
+                  setVideo(null);
                 }}
                 src="/Images/close-post.svg"
                 alt="close"
               />
             )}
-            {image && !vedio && <img src={URL.createObjectURL(image)} alt="" />}
-            {vedio && !image && (
+            {image && !video && <img src={URL.createObjectURL(image)} alt="" />}
+            {video && !image && (
               <ReactPlayer
                 width="100%"
-                url={URL.createObjectURL(vedio)}
+                url={URL.createObjectURL(video)}
                 controls={true}
               />
             )}
-            {!image && !vedio && textURL && (
+            {!image && !video && textURL && (
               <ReactPlayer width="100%" url={text} controls={true} />
             )}
           </Uploads>
@@ -112,7 +112,7 @@ const PostModel = (props) => {
             <div className="editor">
               <div className="addButtons">
                 <button
-                  disabled={image || vedio || textURL}
+                  disabled={image || video || textURL}
                   onClick={() => sharedImage.current.click()}
                 >
                   <img src="/Images/photo-icon.svg" alt="Add a pic" />
@@ -126,20 +126,20 @@ const PostModel = (props) => {
                 </button>
 
                 <button
-                  disabled={image || vedio || textURL}
-                  onClick={() => sharedVedio.current.click()}
+                  disabled={image || video || textURL}
+                  onClick={() => sharedVideo.current.click()}
                 >
                   <img src="/Images/vedio-icon.svg" alt="Add a vedio" />
                   <input
-                    ref={sharedVedio}
-                    onChange={(e) => setVedio(e.target.files[0])}
+                    ref={sharedVideo}
+                    onChange={(e) => setVideo(e.target.files[0])}
                     type="file"
                     accept="video/*"
                     hidden
                   />
                 </button>
 
-                <button disabled={image || vedio || textURL}>
+                <button disabled={image || video || textURL}>
                   <img src="/Images/document.svg" alt="Add a document" />
                 </button>
               </div>

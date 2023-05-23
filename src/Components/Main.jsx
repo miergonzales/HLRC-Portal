@@ -38,7 +38,7 @@ const Main = () => {
       // Upload File.
       const storageRef = ref(
         storage,
-        post.image ? `images/${post.image.name}` : `vedios/${post.vedio.name}`
+        post.image ? `images/${post.image.name}` : `videos/${post.vedio.name}`
       );
       const upload = uploadBytesResumable(
         storageRef,
@@ -49,7 +49,7 @@ const Main = () => {
       upload.on(
         "state_changed",
         (snapshot) => {
-          console.log(snapshot);
+          // console.log(snapshot);
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           setLoad(progress);
@@ -58,7 +58,7 @@ const Main = () => {
           }
         },
         (error) => {
-          console.log(error.code);
+          // console.log(error.code);
         },
         async () => {
           const url = await getDownloadURL(upload.snapshot.ref);
@@ -107,7 +107,7 @@ const Main = () => {
       likes: likes.some((l) => l.email === user.email)
         ? likes.filter((l) => l.email !== user.email)
         : [
-            { name: user.displayName, email: user.email, photo: user.photoURL },
+            { name: user.displayName, photo: user.photoURL },
             ...likes,
           ],
     });
@@ -137,12 +137,7 @@ const Main = () => {
 
           <button onClick={() => setShowModel(true)}>
             <img src="/Images/vedio-icon.svg" alt="vedio" />
-            <span>Vedio</span>
-          </button>
-
-          <button onClick={() => setShowModel(true)}>
-            <img src="/Images/job-icon.svg" alt="job" />
-            <span>Job</span>
+            <span>Video</span>
           </button>
 
           <button onClick={() => setShowModel(true)}>
