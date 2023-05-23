@@ -20,13 +20,13 @@ const Leftside = (props) => {
           </a>
         </UserInfo>
         <Widget>
-          <a href="/feed">
+          {/* <a href="/feed">
             <div>
               <span>Connections</span>
               <span>Grow your network</span>
             </div>
             <p>130</p>
-          </a>
+          </a> */}
         </Widget>
         <Item>
           <span>
@@ -37,18 +37,18 @@ const Leftside = (props) => {
       </ArtCard>
 
       <CommunityCard>
-        <a href="/feed">
+        {/* <a href="/feed">
           <span>Groups</span>
-        </a>
+        </a> */}
         <a href="/feed">
           <span>
             Events
             <img src="/Images/plus-icon.svg" alt="" />
           </span>
         </a>
-        <a href="/feed">
+        {/* <a href="/feed">
           <span>Follow Hashtags</span>
-        </a>
+        </a> */}
         <a href="/feed">
           <span>Discover more</span>
         </a>

@@ -12,7 +12,6 @@ const Home = (props) => {
       <Layout>
         <Leftside />
         <Main />
-        <Rightside />
       </Layout>
     </Container>
   );

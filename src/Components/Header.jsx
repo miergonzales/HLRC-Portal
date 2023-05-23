@@ -16,7 +16,7 @@ const Header = (props) => {
       <Content>
         <Logo>
           <a href="/feed">
-            <img src="/Images/home-logo.svg" alt="" />
+            <img src="/Images/hlrc logo header.png" alt="" height={30}/>
           </a>
         </Logo>
         <Search>
@@ -34,15 +34,7 @@ const Header = (props) => {
               <span>Home</span>
             </NavList>
 
-            <NavList>
-              <img src="/Images/nav-network.svg" alt="" />
-              <span>My Network</span>
-            </NavList>
-
-            <NavList>
-              <img src="/Images/nav-jobs.svg" alt="" />
-              <span>Jobs</span>
-            </NavList>
+            
 
             <NavList>
               <img src="/Images/nav-messaging.svg" alt="" />
@@ -67,13 +59,7 @@ const Header = (props) => {
               {showUser && <Profile />}
             </User>
 
-            <Work>
-              <img src="/Images/nav-work.svg" alt="" />
-              <span>
-                Work
-                <img src="/Images/down-icon.svg" alt="" />
-              </span>
-            </Work>
+           
           </NavListWrap>
         </Nav>
       </Content>
