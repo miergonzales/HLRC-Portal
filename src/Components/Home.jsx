@@ -5,7 +5,7 @@ import Main from "./Main";
 /*________________________________________________________________________________*/
 
 const Home = (props) => {
-  document.title = "Feed | Linkedin";
+  document.title = "Feed | HLRC Portal";
   return (
     <Container>
       <Layout>
